@@ -14,3 +14,13 @@ Wed, Apr 16, 2025  8:55:35 AM:
  tests:  2|5
 total_score: 10/70
 1a313c4
+Wed, Apr 16, 2025  8:58:41 AM: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'searchMap':
+hashmap.c:79:9: error: expected ';' before 'return'
+         return current;
+         ^~~~~~
+7c4a293
