@@ -52,12 +52,10 @@ void enlarge(HashMap * map) {
 
 
 HashMap * createMap(long capacity) {
-    //if (capacity == 0) return NULL;
     HashMap *mapa = (HashMap *) malloc(sizeof(HashMap));
 
     mapa->buckets = (Pair**) calloc(capacity,sizeof(Pair*));
 
-    //if (mapa == NULL) exit(1);
     mapa->capacity = capacity;
     mapa->size = 0;
     mapa->current = -1;
@@ -66,11 +64,19 @@ HashMap * createMap(long capacity) {
 
 void eraseMap(HashMap * map,  char * key) {    
 
-
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
+    long index = hash(key,map->capacity);
+    Pair *current = map->buckets[index];
+    map->size++;
+    if (current == NULL) {
+        return NULL;
+    }
 
+    if (is_equal(current->key, key)) {
+        return current; 
+    }
 
     return NULL;
 }
