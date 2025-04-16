@@ -41,3 +41,12 @@ hashmap.c:84:13: error: 'true' undeclared (first use in this function)
              ^~~~
 hashmap.c:84:13: note: each undeclared identifier is reported only once for each function it appears in
 bc369b2
+Wed, Apr 16, 2025  9:04:52 AM: 
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'searchMap':
+hashmap.c:84:13: error: 'true' undeclared (first use in this function)
+     } while(true);
+             ^~~~
+hashmap.c:84:13: note: each undeclared identifier is reported only once for each function it appears in
+95add45
