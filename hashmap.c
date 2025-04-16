@@ -74,10 +74,14 @@ Pair * searchMap(HashMap * map,  char * key) {
         return NULL;
     }
 
-    if (is_equal(current->key, key)) {
-        map->current = pos;
-        return current; 
-    }
+    do{
+        if (is_equal(current->key, key)) {
+            map->current = pos;
+            return current; 
+        }
+
+        pos = (pos+1) % map->capacity;
+    } while(true);
 
     return NULL;
 }
