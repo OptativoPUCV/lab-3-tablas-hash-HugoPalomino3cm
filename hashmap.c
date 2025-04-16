@@ -75,7 +75,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     }
 
     if (is_equal(current->key, key)) {
-        map->current = pos
+        map->current = pos;
         return current; 
     }
 

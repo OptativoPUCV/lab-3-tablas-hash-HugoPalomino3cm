@@ -24,3 +24,9 @@ hashmap.c:79:9: error: expected ';' before 'return'
          return current;
          ^~~~~~
 7c4a293
+Wed, Apr 16, 2025  8:59:03 AM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|5
+total_score: 10/70
+14a5dc3
