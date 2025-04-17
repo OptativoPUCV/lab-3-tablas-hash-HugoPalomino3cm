@@ -126,3 +126,17 @@ Wed, Apr 16, 2025  9:47:20 PM:
  tests:  9|2
 total_score: 50/70
 abce403
+Wed, Apr 16, 2025  9:48:49 PM: 
+ hashmap.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'eraseMap':
+hashmap.c:103:9: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+         if (map->buckets[pos]->key != NULL && is_equal(map->buckets[pos]->key,key));{
+         ^~
+hashmap.c:103:85: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+         if (map->buckets[pos]->key != NULL && is_equal(map->buckets[pos]->key,key));{
+                                                                                     ^
+cc1.exe: all warnings being treated as errors
+c748404
