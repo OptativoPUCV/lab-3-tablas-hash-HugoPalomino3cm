@@ -101,10 +101,22 @@ void eraseMap(HashMap * map, char * key) {
 
     while (map->buckets[pos] != NULL) {
         if (map->buckets[pos]->key != NULL && is_equal(map->buckets[pos]->key, key)) {
-
-            map->buckets[pos] = NULL; 
+            // Liberar el par
+            free(map->buckets[pos]);
+            map->buckets[pos] = NULL;
             map->size--;
             map->current = -1;
+
+            pos = (pos + 1) % map->capacity;
+            while (map->buckets[pos] != NULL) {
+                Pair *par = map->buckets[pos];
+                map->buckets[pos] = NULL;
+                map->size--; 
+                insertMap(map, par->key, par->value);
+                free(par);
+                pos = (pos + 1) % map->capacity;
+            }
+
             return;
         }
         pos = (pos + 1) % map->capacity;
