@@ -109,3 +109,14 @@ Wed, Apr 16, 2025  9:42:09 PM:
  tests:  9|2
 total_score: 50/70
 6ec5832
+Wed, Apr 16, 2025  9:45:40 PM: 
+ hashmap.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'eraseMap':
+hashmap.c:116:39: error: 'value' undeclared (first use in this function)
+     Pair *nuevoPair = createPair(key, value);
+                                       ^~~~~
+hashmap.c:116:39: note: each undeclared identifier is reported only once for each function it appears in
+a838938

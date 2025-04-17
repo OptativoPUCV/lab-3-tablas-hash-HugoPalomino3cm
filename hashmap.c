@@ -109,7 +109,20 @@ void eraseMap(HashMap * map,  char * key) {
         }
         pos = (pos + 1) % map->capacity;
     }
+    if (map->buckets[pos] != NULL) {
+        free(map->buckets[pos]); 
+    }
 
+    Pair *nuevoPair = createPair(key, value);
+    
+    map->buckets[pos] = nuevoPair;
+    map->size++;
+
+    map->current = pos;
+
+    if ((double)map->size / map->capacity > 0.75) {
+        enlarge(map);
+    }
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
