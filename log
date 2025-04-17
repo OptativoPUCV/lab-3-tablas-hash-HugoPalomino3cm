@@ -120,3 +120,9 @@ hashmap.c:116:39: error: 'value' undeclared (first use in this function)
                                        ^~~~~
 hashmap.c:116:39: note: each undeclared identifier is reported only once for each function it appears in
 a838938
+Wed, Apr 16, 2025  9:47:20 PM: 
+ hashmap.c | 18 ++++--------------
+ 1 file changed, 4 insertions(+), 14 deletions(-)
+ tests:  9|2
+total_score: 50/70
+abce403
