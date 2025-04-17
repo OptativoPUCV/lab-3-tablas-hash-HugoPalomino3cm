@@ -140,3 +140,9 @@ hashmap.c:103:85: note: ...this statement, but the latter is misleadingly indent
                                                                                      ^
 cc1.exe: all warnings being treated as errors
 c748404
+Wed, Apr 16, 2025  9:49:38 PM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  9|2
+total_score: 50/70
+1027a83
