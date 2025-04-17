@@ -57,26 +57,27 @@ void insertMap(HashMap * map, char * key, void * value) {
 
     map->current = pos;
 
-    // posible enlarge
+    if ((double)map->size / map->capacity > 0.75) {
+        enlarge(map);
+    }
 
 }
 
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+    enlarge_called = 1;
 
     Pair **antiguo = map->buckets;
-    
     long antiguaCapacidad = map->capacity;
 
     map->capacity *= 2;
     map->size = 0;
     map->current = -1;
 
-    map->buckets = (Pair **) calloc(map->capacity,sizeof(Pair *));
+    map->buckets = (Pair **)calloc(map->capacity, sizeof(Pair *));
 
-    for(size_t k = 0; k <= antiguaCapacidad; k++){
-        if(antiguo[k] != NULL && antiguo[k]->key != NULL){
-            insertMap(map,antiguo[k]->key, antiguo[k]->value);
+    for (size_t k = 0; k < antiguaCapacidad; k++) {
+        if (antiguo[k] != NULL && antiguo[k]->key != NULL) {
+            insertMap(map, antiguo[k]->key, antiguo[k]->value);
             free(antiguo[k]);
         }
     }
